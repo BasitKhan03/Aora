@@ -27,10 +27,9 @@ Once the app is installed and running, you can:
 * Sign up and create a user profile.
 * Upload and share AI-generated videos.
 * Browse the feed to discover videos shared by other users.
-* Like and comment on videos.
+* Like your favorite videos.
 * Bookmark videos to watch later.
-* Search for specific content or users.
-* Receive notifications about interactions with your content.
+* Search for specific content.
 
 ## Contributing
 We welcome contributions from the community! If you'd like to contribute to Aora, please fork the repository and submit a pull request with your changes.
