@@ -41,11 +41,13 @@ For any questions or issues, please open an issue on GitHub.
 ## App Preview
 Get a visual overview of Aora's key features and user interface. Below are some screenshots showcasing various aspects of the app, including the welcome, login, and signup screens, the home feed, user profile, and more.
 
-### Login & Signup
-The "Login & Signup" screens provide a seamless user experience for creating a new account or logging into an existing one. Easily sign up with your email or log in to start sharing and exploring AI-generated videos.
+### Welcome, Login & Signup
+The Welcome, Login & Signup screens guide users through the initial steps of accessing the app. Users can create new accounts or log in to existing ones to start sharing and discovering AI-generated videos.
 
 <img src="https://github.com/user-attachments/assets/fc0bc2de-2d24-46db-9a6a-a9382562ea98" width="240" />
 <img src="https://github.com/user-attachments/assets/59bd53d3-17fa-4bf3-9a64-9e460e144730" width="240" />
 <img src="https://github.com/user-attachments/assets/52d3c6c8-a569-4552-9de3-a86561d9e4b5" width="240" />
+<img src="https://github.com/user-attachments/assets/e4f33ede-31af-49c3-af77-890a7e829eec" width="240" />
+
 
 
