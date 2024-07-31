@@ -2,7 +2,7 @@
 Aora is a mobile application for sharing AI-generated videos, built with React Native and NativeWind. It allows users to easily share their AI-created content with others.
 
 ### Download the App
-You can download the latest version of the Aora app APK [here]()
+You can download the latest version of the Aora app APK [here](https://expo.dev/accounts/basitkhan03/projects/Aora/builds/47d21b50-2c77-4710-9b04-19cb13250857)
 
 ## Features
 
