@@ -90,7 +90,7 @@ const CustomModal = ({
                   <CustomButton
                     title="Delete"
                     containerStyles="mt-8 w-[45%] bg-red-100"
-                    handlePress={() => del(selectedVideo.$id)}
+                    handlePress={() => del(selectedVideo.id)}
                     isLoading={deleting}
                   />
                   <CustomButton

@@ -77,7 +77,7 @@ const Profile = () => {
   };
 
   const bottomSheetModalRef = useRef(null);
-  const snapPoints = useMemo(() => ["25%", "40%"], []);
+  const snapPoints = useMemo(() => ["30%", "35%"], []);
 
   const handlePresentModalPress = useCallback((videoId, videoTitle) => {
     setSelectedVideo({ id: videoId, prompt: videoTitle });

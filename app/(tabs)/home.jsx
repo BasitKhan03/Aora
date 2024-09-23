@@ -34,7 +34,9 @@ const Home = () => {
     fetchPosts,
     refetchPosts,
     loadingMore,
+    setLoadingMore,
     hasMore,
+    setHasMore
   } = useGlobalContext();
   const {
     data: latestPosts,
@@ -54,7 +56,7 @@ const Home = () => {
   };
 
   const bottomSheetModalRef = useRef(null);
-  const snapPoints = useMemo(() => ["25%", "40%"], []);
+  const snapPoints = useMemo(() => ["30%", "35%"], []);
 
   const handlePresentModalPress = useCallback((videoId, videoTitle) => {
     setSelectedVideo({ id: videoId, prompt: videoTitle });
@@ -78,11 +80,24 @@ const Home = () => {
     }, [])
   );
 
-  const handleLoadMore = useCallback(() => {
-    if (!loadingMore && hasMore) {
-      fetchPosts();
+  const handleLoadMore = async () => {
+    if (!hasMore || loadingMore) return;
+  
+    setLoadingMore(true);
+    const currentOffset = posts.length; 
+  
+    try {
+      const fetchedPosts = await fetchPosts(false, currentOffset);
+  
+      if (fetchedPosts && fetchedPosts.length < limit) {
+        setHasMore(false);
+      }
+    } catch (error) {
+      console.error("Error loading more posts:", error);
+    } finally {
+      setLoadingMore(false);
     }
-  }, [loadingMore, hasMore, fetchPosts]);
+  };
 
   const memoizedHandleLike = useCallback(
     (videoId) => {

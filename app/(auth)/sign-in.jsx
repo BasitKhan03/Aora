@@ -121,7 +121,7 @@ const SignIn = () => {
               href="/sign-up"
               className="text-base font-psemibold text-secondary"
             >
-              Sign Up
+              Sign up
             </Link>
           </View>
         </View>

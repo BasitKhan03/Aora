@@ -63,33 +63,26 @@ const GlobalProvider = ({ children }) => {
     }
   };
 
-  const fetchPosts = async (reset = false) => {
+  const fetchPosts = async (reset = false, currentOffset = 0) => {
     if (!user || isPostsLoading || (loadingMore && !reset)) return;
     if (!reset && !hasMore) return;
-
-    if (reset) {
-      setOffset(0);
-      setPosts([]);
-      setHasMore(true);
-    }
-
-    setIsPostsLoading(reset);
+  
+    setIsPostsLoading(true);
     setLoadingMore(!reset);
-
+  
     try {
-      const fetchedPosts = await getAllPosts(limit, reset ? 0 : offset);
-
-      setPosts((prevPosts) =>
-        reset ? fetchedPosts : [...prevPosts, ...fetchedPosts]
-      );
-
+      const fetchedPosts = await getAllPosts(limit, currentOffset); 
+  
+      setPosts((prevPosts) => (reset ? fetchedPosts : [...prevPosts, ...fetchedPosts]));
+  
       if (fetchedPosts.length < limit) {
         setHasMore(false);
       } else {
-        setOffset((prevOffset) => prevOffset + limit);
+        setHasMore(true);
+        setOffset(currentOffset + limit); 
       }
     } catch (error) {
-      console.error(error);
+      console.error("Error fetching posts:", error);
     } finally {
       setIsPostsLoading(false);
       setLoadingMore(false);
@@ -248,7 +241,9 @@ const GlobalProvider = ({ children }) => {
         fetchPosts,
         refetchPosts,
         loadingMore,
+        setLoadingMore,
         hasMore,
+        setHasMore,
         profilePosts,
         refetchProfilePosts,
         savedPosts,
